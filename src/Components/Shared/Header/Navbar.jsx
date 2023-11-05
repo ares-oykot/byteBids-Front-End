@@ -126,7 +126,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
             </div>
             <div className="mr-12 lg:hidden z-50">
                 <img className="h-8 md:h-14 lg:hidden" src={icon} alt="" />
-                <h1 className="text-3xl font-black text-sky-600">ByteBids</h1>
+                <h1 className="text-3xl md:text-4xl ml-3 md:ml-2 font-black text-sky-600">ByteBids</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="">
