@@ -17,7 +17,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                             ? "pending"
                             : isActive
                                 ? "py-1 rounded px-2 bg-cyan-200"
-                                : "btn btn-primary duration-300 py-1 px-2"
+                                : "bg-slate-200 hover:bg-sky-200 rounded duration-100 py-1 px-2"
                     }
                 >
                     Home
