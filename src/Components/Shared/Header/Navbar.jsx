@@ -8,7 +8,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
 
     }
     const navLinks =
-        <div className="flex flex-col lg:flex-row text-lg gap-2 font-semibold">
+        <div className="flex flex-col lg:flex-row gap-2 ">
             <li>
                 <NavLink
                     to="/"

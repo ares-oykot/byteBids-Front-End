@@ -1,0 +1,110 @@
+[
+    {
+        "category": "webDevelopment",
+        "title": "Full-stack Web Development",
+        "img": "https://i.ibb.co/yN9DQZZ/Full-Stack.png",
+        "deadline": "25-11-2023",
+        "price_range": "$1500-$2000",
+        "short_description": "Join our team as a full-stack developer, shaping innovative solutions and contributing to our company's success.",
+        "description": "Are you a skilled full-stack developer looking to make an impact? Join our dynamic team and play a pivotal role in developing, maintaining, and optimizing our web applications. You'll collaborate with a talented group, work on exciting projects, and help drive our company's growth. If you're passionate about creating robust and innovative software solutions, we want to hear from you!"
+    },
+    {
+        "category": "webDevelopment",
+        "title": "Front-end Web Development",
+        "img": "https://i.ibb.co/RbsgTdL/FrontEnd.png",
+        "deadline": "24-11-2023",
+        "price_range": "$900-$1000",
+        "short_description": "Join us as a front-end developer, crafting engaging user interfaces and shaping exceptional web experiences for our company's growth.",
+        "description": "Are you a skilled front-end developer eager to create captivating user interfaces and enhance web functionality? Join our team and play a crucial role in designing and optimizing the front-end of our digital products. Collaborate with a talented group, work on exciting projects, and help elevate our company's online presence. If you have a passion for crafting outstanding web experiences, we want to hear from you!"
+    },
+    {
+        "category": "webDevelopment",
+        "title": "Back-end Web Development",
+        "img": "https://i.ibb.co/mXvh8Fk/backEnd.png",
+        "deadline": "23-11-2023",
+        "price_range": "$1200-$1500",
+        "short_description": "Seeking a back-end developer to enhance our systems and server-side solutions. Join our team and drive the efficiency and performance of our company's infrastructure.",
+        "description": "Join our team as a back-end developer and be the backbone of our digital infrastructure. You'll design and implement server-side systems, optimize database performance, and ensure the scalability and security of our applications. Collaborate with a skilled team, work on challenging projects, and help shape the technical foundation of our company. If you have a passion for robust back-end development, we're eager to have you on board!"
+    },
+    {
+        "category": "webDevelopment",
+        "title": "WordPress Web Development",
+        "img": "https://i.ibb.co/g4d9nYw/word-Press.png",
+        "deadline": "22-11-2023",
+        "price_range": "$500-$700",
+        "short_description": "Looking for a WordPress developer to create and maintain outstanding websites. Join us in enhancing our online presence and delivering exceptional user experiences.",
+        "description": "We're seeking a skilled WordPress developer to shape our digital presence. Join our team and be a driving force behind creating and maintaining stunning websites. You'll bring your expertise to customize themes, optimize performance, and ensure the security of our online platforms. Collaborate with a dynamic group, work on diverse projects, and help us deliver exceptional web experiences. If you're passionate about WordPress development, we'd love to have you on board!"
+    },
+    {
+        "category": "graphicsDesign",
+        "title": "UI Design",
+        "img": "https://i.ibb.co/gWPRsZr/Ui.png",
+        "deadline": "25-11-2023",
+        "price_range": "$500-$600",
+        "short_description": "Hiring a creative UI designer to elevate visual experiences. Join our graphics design team to craft compelling user interfaces and innovative design solutions.",
+        "description": "Join our dynamic graphics design company as a UI designer and be at the forefront of crafting exceptional visual experiences. You'll collaborate with a talented team to design user-friendly interfaces, create stunning graphics, and shape innovative design solutions. Work on diverse projects, from web and mobile apps to branding and marketing materials. If you're passionate about creating compelling visual designs, we invite you to bring your creativity to our team."
+    },
+    {
+        "category": "graphicsDesign",
+        "title": "T-shirt Design",
+        "img": "https://i.ibb.co/jWxywbR/TShart.png",
+        "deadline": "24-11-2023",
+        "price_range": "$400-$500",
+        "short_description": "Hiring a creative t-shirt designer to join our graphics team. Create unique and appealing t-shirt designs that resonate with our customers.",
+        "description": "Join our graphics design company as a t-shirt designer and unleash your creativity. You'll play a key role in crafting captivating and trendy t-shirt designs that resonate with our target audience. Collaborate with a team of passionate designers, work on a wide range of design projects, and contribute to our brand's success. If you have a keen eye for visual aesthetics and a passion for t-shirt design, we welcome you to be part of our creative journey."
+    },
+    {
+        "category": "graphicsDesign",
+        "title": "Cartoon Design",
+        "img": "https://i.ibb.co/QQ3DFyS/Cartoon.png",
+        "deadline": "23-11-2023",
+        "price_range": "$600-$700",
+        "short_description": "Hiring a skilled cartoon designer to bring characters and illustrations to life. Join our creative team in crafting captivating and imaginative cartoons.",
+        "description": "Join our graphics design company as a cartoon designer and let your creativity run wild. You'll be instrumental in creating charming and imaginative characters and illustrations that resonate with our audience. Collaborate with a dynamic team, work on diverse design projects, and contribute to the playful spirit of our brand. If you're passionate about bringing stories and characters to life through cartoons, we're excited to have you on board to infuse our designs with charm and personality."
+    },
+    {
+        "category": "graphicsDesign",
+        "title": "Photo Editing",
+        "img": "https://i.ibb.co/98FkQWG/Photo-Editor.png",
+        "deadline": "22-11-2023",
+        "price_range": "$400-$500",
+        "short_description": "Hiring a skilled photo editor to enhance and retouch images. Join our creative team in perfecting visuals and delivering high-quality, captivating graphics.",
+        "description": "Join our graphics design company as a photo editor and play a vital role in elevating the visual impact of our projects. You'll use your expertise to enhance, retouch, and manipulate images, ensuring they meet our high-quality standards. Collaborate with a talented team, work on a variety of design projects, and contribute to our brand's success through striking visuals. If you're passionate about perfecting images and delivering captivating graphics, we invite you to bring your skills to our creative team."
+    },
+    {
+        "category": "digitalMarketing",
+        "title": "Online Advertisement",
+        "img": "https://i.ibb.co/rGw2Gwm/Online-Advertisement.png",
+        "deadline": "25-11-2023",
+        "price_range": "$700-$750",
+        "short_description": "Hiring an Online Advertiser to drive digital marketing success. Join our team to strategize, create, and optimize online ad campaigns for clients' growth.",
+        "description": "Join our dynamic digital marketing company as an Online Advertiser and be at the forefront of delivering impactful online advertising campaigns. You'll work closely with clients to strategize, create, and optimize ad campaigns across various platforms, driving measurable results and growth. Collaborate with a dedicated team, stay up-to-date with industry trends, and shape the online presence of our clients. If you're passionate about digital advertising and driving success for businesses, we invite you to be part of our team."
+    },
+    {
+        "category": "digitalMarketing",
+        "title": "Content Writing",
+        "img": "https://i.ibb.co/nCD8wwH/Writer.png",
+        "deadline": "24-11-2023",
+        "price_range": "$300-$400",
+        "short_description": "Hiring a skilled Content Writer to craft engaging and persuasive content. Join our team to create compelling copy that drives digital marketing success.",
+        "description": "Join our dynamic digital marketing company as a Content Writer and be the voice behind compelling and persuasive content that captivates audiences. You'll collaborate with our creative team to create engaging copy for websites, blogs, social media, and marketing materials. Craft content that resonates with target audiences and drives digital marketing success. If you're passionate about storytelling and delivering results through words, we welcome you to play a pivotal role in our content strategy."
+    },
+    {
+        "category": "digitalMarketing",
+        "title": "Search Engine Optimization",
+        "img": "https://i.ibb.co/pLbZhyX/Seo.png",
+        "deadline": "23-11-2023",
+        "price_range": "$700-$800",
+        "short_description": "Hiring an SEO Specialist to optimize websites and improve online visibility. Join our team to drive organic traffic and enhance digital marketing performance.",
+        "description": "Join our dynamic digital marketing company as an SEO Specialist and lead the charge in improving online visibility and driving organic traffic. You'll collaborate with our team to develop and execute SEO strategies, perform keyword research, and optimize websites to rank higher in search engine results. With a keen eye on analytics, you'll measure and enhance digital marketing performance. If you're passionate about SEO and achieving exceptional results, we invite you to be a key player in our growth story."
+    },
+    {
+        "category": "digitalMarketing",
+        "title": "Social Media Marketing",
+        "img": "https://i.ibb.co/g6wJhLQ/Social-Media.png",
+        "deadline": "22-11-2023",
+        "price_range": "$200-$300",
+        "short_description": "Hiring a Social Media Marketer to manage and grow online presence. Join our team in creating engaging social media strategies and boosting digital marketing efforts.",
+        "description": "Join our vibrant digital marketing company as a Social Media Marketer and shape our clients' online presence. You'll craft and execute engaging social media strategies, manage accounts, and create compelling content. Monitor performance, analyze data, and adapt campaigns to boost brand visibility and customer engagement. Collaborate with our team, stay current with industry trends, and drive results that make an impact. If you're passionate about social media marketing and want to help businesses thrive in the digital landscape, we invite you to be part of our journey."
+    }
+]
