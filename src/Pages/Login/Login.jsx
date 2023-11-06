@@ -10,7 +10,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import swal from 'sweetalert';
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const handleLogin = event => {
@@ -18,10 +18,20 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        
+
         signIn(email, password)
             .then(() => {
                 swal("Nice!!", "User sign in successful", "success");
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                swal("Oops!!", `${error.message}`, "error");
+            });
+    };
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(() => {
+                swal("Nice!!", "User login successful", "success");
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -39,7 +49,7 @@ const Login = () => {
                     <h3 className="text-3xl font-semibold text-center my-6 text-indigo-400">User Sign In</h3>
                     <div className="mx-5 md:mx-10 pb-10">
                         <div className="flex gap-9 justify-center mt-5">
-                            <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={google} alt="google" />
+                            <img onClick={handleGoogleSignIn} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={google} alt="google" />
                             <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={git} alt="git" />
                             <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={twitter} alt="twitter" />
                             <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={fb} alt="fb" />

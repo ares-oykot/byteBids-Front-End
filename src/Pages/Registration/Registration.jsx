@@ -11,7 +11,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 const Registration = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { createUser } = useContext(AuthContext);
+    const { createUser, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleRegistration = event => {
         event.preventDefault();
@@ -57,6 +57,16 @@ const Registration = () => {
                 swal("Oops!!", `${error.message}`, "error");
             });
     };
+    const handleGoogleSignUp = () => {
+        googleSignIn()
+            .then(() => {
+                swal("Nice!!", "User Registration successful", "success");
+                navigate("/");
+            })
+            .catch(error => {
+                swal("Oops!!", `${error.message}`, "error");
+            });
+    };
     return (
         <div className=" h-[100vh]">
             <div className="shadow-xl md:w-3/4 lg:w-2/4 mx-auto">
@@ -68,7 +78,7 @@ const Registration = () => {
                     <h3 className="text-3xl font-semibold text-center my-6 text-indigo-400">User Sign Up</h3>
                     <div className="mx-5 md:mx-10 pb-10">
                         <div className="flex gap-9 justify-center mt-5">
-                            <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={google} alt="google" />
+                            <img onClick={handleGoogleSignUp} className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={google} alt="google" />
                             <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={git} alt="git" />
                             <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={twitter} alt="twitter" />
                             <img className="w-10 h-10 rounded-full hover:border-2 hover:shadow-xl duration-100" src={fb} alt="fb" />

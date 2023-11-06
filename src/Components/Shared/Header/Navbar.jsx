@@ -6,6 +6,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -14,7 +15,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
             .catch(() => {
 
             });
-    }
+    };
     const navLinks =
         <div className="flex flex-col lg:flex-row gap-2 ">
             <li>
