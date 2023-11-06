@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import profile from "../../../assets/user.png"
 import icon from "../../../assets/letter-b.png"
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
-    const user = null;
+    const { user } = useContext(AuthContext);
     const handleSignOut = () => {
 
     }
@@ -147,7 +149,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                     }
                 </button>
                 {
-                    user?.displayName ? <p className="text-[6px] md:text-base font-bold mr-2 py-2 bg-yellow-500 px-2 rounded-3xl">{user.displayName}</p>
+                    user?.displayName ? <p className="text-[6px] md:text-base font-bold mr-2 py-2 bg-sky-300 px-2 rounded-3xl">{user.displayName}</p>
                         :
                         ""
                 }
@@ -163,7 +165,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                     </label>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded p-1 w-32  right-0">
                         {
-                            user ? <button onClick={handleSignOut} className=" bg-orange-500 w-full text-white px-6 py-2 duration-300 rounded-sm">Sign Out</button>
+                            user ? <button onClick={handleSignOut} className=" bg-sky-500 w-full text-white px-6 py-2 duration-300 rounded-sm">Sign Out</button>
                                 :
                                 <Link to="/signIn"><button className=" bg-emerald-600 w-full text-white px-6 py-2 duration-300 rounded-sm">Login</button></Link>
                         }
