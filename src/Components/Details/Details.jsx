@@ -3,6 +3,18 @@ import moment from 'moment';
 const Details = () => {
     const job = useLoaderData();
     const { title, img, deadline, price_range, description, buyer_Email } = job || {};
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const title = form.title.value;
+        const deadline = form.deadline.value;
+        const biddingAmount = form.biddingAmount.value;
+        const price_range = form.price_range.value;
+        const email = form.email.value;
+        const buyer_Email = form.buyer_Email.value;
+        const message = form.message.value;
+        // console.log(title, deadline, biddingAmount, price_range, email, buyer_Email, message);
+    }
     return (
         <div className="">
             <p className="text-center mt-5">{moment().format("dddd, MMMM D, YYYY, h:mm:ss a")}</p>
@@ -21,7 +33,7 @@ const Details = () => {
                 <div className="bg-[#F4F3F0] mt-10 pt-10 py-16 rounded px-5  md:px-0">
                     <h1 className="text-center text-3xl font-semibold">Place Your Bid Here</h1>
                     <p className="text-justify md:text-center  mt-4">You can apply for the mentioned job by submitting this form below. But you must submit within the specified time. Once the deadline has passed you can no longer bet. And of course know everything well from the job description.</p>
-                    <form className="md:px-20 mt-4">
+                    <form onSubmit={handleSubmit} className="md:px-20 mt-4">
 
                         <div className="flex flex-col lg:flex-row md:gap-5">
                             <div className="w-full">
@@ -37,7 +49,7 @@ const Details = () => {
                         <div className="flex flex-col lg:flex-row md:gap-5">
                             <div className="w-full">
                                 <p className="font-semibold mb-2">Your Bidding Amount</p>
-                                <input className="bg-white w-full rounded-sm pl-3 py-1" placeholder="Enter Your Bidding Amount" type="text" name="amount" />
+                                <input className="bg-white w-full rounded-sm pl-3 py-1" placeholder="Enter Your Bidding Amount" type="text" name="biddingAmount" />
                             </div>
                             <div className="w-full">
                                 <p className="font-semibold mb-2">Price Range</p>
@@ -58,7 +70,7 @@ const Details = () => {
 
                         <div className="mt-2">
                             <p className="font-semibold mb-2">Your Message (Optional)</p>
-                            <textarea name="" className="bg-white h-20 pt-3 w-full rounded-sm pl-3" placeholder="Write Your Message Here"></textarea>
+                            <textarea name="message" className="bg-white h-20 pt-3 w-full rounded-sm pl-3" placeholder="Write Your Message Here"></textarea>
                         </div>
                         <input className="w-full mt-5 bg-slate-300 cursor-pointer btn text-xl font-semibold py-1 rounded" type="submit" value="Submit" />
                     </form>
