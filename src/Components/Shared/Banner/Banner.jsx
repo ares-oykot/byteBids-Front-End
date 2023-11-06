@@ -21,7 +21,7 @@ const Banner = () => {
                                 <BiSelectMultiple /> Graphics Designer
                             </span>
                         </div>
-                        <button className='flex gap-1 items-center mt-2 md:text-lg bg-sky-500 hover:bg-sky-600 duration-200 rounded-3xl pl-1 pr-2'><span className='rounded-full border '><TbPlayerTrackNextFilled /></span> GET STARTED</button>
+                        <a ><button className='flex gap-1 items-center mt-2 md:text-lg bg-sky-500 hover:bg-sky-600 duration-200 rounded-3xl pl-1 pr-2'><span className='rounded-full border '><TbPlayerTrackNextFilled /></span> GET STARTED</button></a>
                     </div>
                 </div>
             </div>

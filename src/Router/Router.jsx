@@ -3,6 +3,7 @@ import Root from "../Layouts/Root";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import Details from "../Components/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
             {
                 path: "/signUp",
                 element: <Registration></Registration>
+            },
+            {
+                path: "/details/:id",
+                element: <Details></Details>,
+                loader: ({params}) => fetch(`http://localhost:5000/job/${params.id}`)
             }
         ]
     }

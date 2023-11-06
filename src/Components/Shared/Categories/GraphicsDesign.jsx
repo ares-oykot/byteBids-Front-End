@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const GraphicsDesign = () => {
     const [jobs, setJobs] = useState([]);
@@ -23,7 +24,7 @@ const GraphicsDesign = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="mx-3 md:mx-5 lg:mx-10 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-10 btn">Bid Now</button>
+                        <Link to={`/details/${job?._id}`}><button className="mx-3 md:mx-5 lg:mx-10 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-10 btn">Bid Now</button></Link>
                     </div>
                 </div>)
             }
