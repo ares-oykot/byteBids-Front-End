@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import moment from 'moment';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import swal from 'sweetalert';
 const Details = () => {
     const job = useLoaderData();
     const { title, img, deadline, price_range, description, buyer_Email } = job || {};
@@ -19,7 +20,20 @@ const Details = () => {
         const email = form.email.value;
         const buyer_Email = form.buyer_Email.value;
         const message = form.message.value;
-        // console.log(title, deadline, biddingAmount, price_range, email, buyer_Email, message);
+        const bidInfo = { title, deadline, biddingAmount, price_range, email, buyer_Email, message, img }
+        fetch('http://localhost:5000/bids', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bidInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    swal("Nice!!", "This project has been successfully bid", "success");
+                }
+            })
     };
     return (
         <div className="">
