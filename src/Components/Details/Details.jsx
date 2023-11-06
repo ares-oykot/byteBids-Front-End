@@ -18,12 +18,12 @@ const Details = () => {
                 </div>
             </div>
             <div className="lg:mx-32">
-                <div className="bg-[#F4F3F0] mt-10 pt-10 py-16 rounded">
+                <div className="bg-[#F4F3F0] mt-10 pt-10 py-16 rounded px-5  md:px-0">
                     <h1 className="text-center text-3xl font-semibold">Place Your Bid Here</h1>
-                    <p className="text-center mt-4">You can apply for the mentioned job by submitting this form below. But you must submit within the specified time. Once the deadline has passed you can no longer bet. And of course know everything well from the job description.</p>
-                    <form className="px-20 mt-4">
+                    <p className="text-justify md:text-center  mt-4">You can apply for the mentioned job by submitting this form below. But you must submit within the specified time. Once the deadline has passed you can no longer bet. And of course know everything well from the job description.</p>
+                    <form className="md:px-20 mt-4">
 
-                        <div className="flex gap-5">
+                        <div className="flex flex-col lg:flex-row md:gap-5">
                             <div className="w-full">
                                 <p className="font-semibold mb-2">Job Name</p>
                                 <input className="bg-white w-full rounded-sm pl-3 py-1" disabled defaultValue={title} type="text" name="title" />
@@ -34,7 +34,7 @@ const Details = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-5 mt-2">
+                        <div className="flex flex-col lg:flex-row md:gap-5">
                             <div className="w-full">
                                 <p className="font-semibold mb-2">Your Bidding Amount</p>
                                 <input className="bg-white w-full rounded-sm pl-3 py-1" placeholder="Enter Your Bidding Amount" type="text" name="amount" />
@@ -45,7 +45,7 @@ const Details = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-5 mt-2">
+                        <div className="flex flex-col lg:flex-row md:gap-5">
                             <div className="w-full">
                                 <p className="font-semibold mb-2">Your Email</p>
                                 <input className="bg-white w-full rounded-sm pl-3 py-1" placeholder="Enter Your Email" type="text" name="email" />
