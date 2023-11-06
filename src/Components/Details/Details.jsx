@@ -1,8 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import moment from 'moment';
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 const Details = () => {
     const job = useLoaderData();
     const { title, img, deadline, price_range, description, buyer_Email } = job || {};
+    const { user } = useContext(AuthContext);
+
+
+
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,7 +20,7 @@ const Details = () => {
         const buyer_Email = form.buyer_Email.value;
         const message = form.message.value;
         // console.log(title, deadline, biddingAmount, price_range, email, buyer_Email, message);
-    }
+    };
     return (
         <div className="">
             <p className="text-center mt-5">{moment().format("dddd, MMMM D, YYYY, h:mm:ss a")}</p>
@@ -60,7 +66,7 @@ const Details = () => {
                         <div className="flex flex-col lg:flex-row md:gap-5">
                             <div className="w-full">
                                 <p className="font-semibold mb-2">Your Email</p>
-                                <input className="bg-white w-full rounded-sm pl-3 py-1" placeholder="Enter Your Email" type="text" name="email" />
+                                <input className="bg-white w-full rounded-sm pl-3 py-1" disabled defaultValue={user?.email} type="text" name="email" />
                             </div>
                             <div className="w-full">
                                 <p className="font-semibold mb-2">Buyer Email</p>
@@ -72,7 +78,7 @@ const Details = () => {
                             <p className="font-semibold mb-2">Your Message (Optional)</p>
                             <textarea name="message" className="bg-white h-20 pt-3 w-full rounded-sm pl-3" placeholder="Write Your Message Here"></textarea>
                         </div>
-                        <input className="w-full mt-5 bg-slate-300 cursor-pointer btn text-xl font-semibold py-1 rounded" type="submit" value="Submit" />
+                        <input disabled={user?.email === buyer_Email ? true : false} className="w-full mt-5 bg-slate-300 cursor-pointer btn text-xl font-semibold py-1 rounded" type="submit" value="Bid On The Project" />
                     </form>
                 </div>
             </div>
