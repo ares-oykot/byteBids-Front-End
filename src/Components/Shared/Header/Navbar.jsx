@@ -5,9 +5,15 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const handleSignOut = () => {
+        logOut()
+            .then(() => {
 
+            })
+            .catch(() => {
+
+            });
     }
     const navLinks =
         <div className="flex flex-col lg:flex-row gap-2 ">
@@ -112,7 +118,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
         </div>
     return (
         <div className="navbar shadow-lg">
-            <div className="navbar-start">
+            <div className="md:navbar-start">
                 <div className="flex items-center gap-2">
                     <img className="h-12 hidden lg:inline" src={icon} alt="" />
                     <h1 className="text-5xl hidden lg:inline font-black text-sky-600">ByteBids</h1>
@@ -126,9 +132,9 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                     </ul>
                 </div>
             </div>
-            <div className="mr-12 lg:hidden z-50">
-                <img className="h-8 md:h-14 lg:hidden" src={icon} alt="" />
-                <h1 className="text-3xl md:text-4xl ml-3 md:ml-2 font-black text-sky-600">ByteBids</h1>
+            <div className="md:mr-12 lg:hidden z-50">
+                <img className="h-6 md:h-14 lg:hidden" src={icon} alt="" />
+                <h1 className="text-2xl md:text-4xl ml-3 md:ml-2 font-black text-sky-600">ByteBids</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="">
@@ -149,14 +155,14 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                     }
                 </button>
                 {
-                    user?.displayName ? <p className="text-[6px] md:text-base font-bold mr-2 py-2 bg-sky-300 px-2 rounded-3xl">{user.displayName}</p>
+                    user?.displayName ? <p className="text-[6px] md:text-base font-bold mr-1 md:mr-2 py-1 md:py-2 bg-sky-300 md:px-2 w-full text-center md:w-48 rounded md:rounded-3xl">{user.displayName}</p>
                         :
                         ""
                 }
                 <div className="dropdown z-50 dropdown-hover">
 
                     <label tabIndex={0} className="">
-                        <div className="w-10">
+                        <div className="w-8 md:w-10">
                             {
                                 user?.photoURL ? <img className="rounded-full" src={user?.photoURL} /> :
                                     <img className="rounded-full" src={profile} />
@@ -167,7 +173,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                         {
                             user ? <button onClick={handleSignOut} className=" bg-sky-500 w-full text-white px-6 py-2 duration-300 rounded-sm">Sign Out</button>
                                 :
-                                <Link to="/signIn"><button className=" bg-emerald-600 w-full text-white px-6 py-2 duration-300 rounded-sm">Login</button></Link>
+                                <Link to="/signIn"><button className=" bg-sky-500 w-full text-white px-6 py-2 duration-300 rounded-sm">Login</button></Link>
                         }
                     </ul>
                 </div>

@@ -4,16 +4,29 @@ import google from "../../assets/google.png"
 import git from "../../assets/github.png"
 import twitter from "../../assets/twitter.png"
 import fb from "../../assets/facebook.png"
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
+import swal from 'sweetalert';
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        
+        signIn(email, password)
+            .then(() => {
+                swal("Nice!!", "User sign in successful", "success");
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                swal("Oops!!", `${error.message}`, "error");
+            });
     };
     return (
         <div className=" h-[100vh]">
