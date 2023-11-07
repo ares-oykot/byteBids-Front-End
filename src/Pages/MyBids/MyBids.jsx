@@ -15,7 +15,7 @@ const MyBids = () => {
 
     }
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto">
             <h1 className="text-4xl font-bold text-center">Your Bids</h1>
             <div className="overflow-x-auto">
                 <table className="table text-xs md:text-base">

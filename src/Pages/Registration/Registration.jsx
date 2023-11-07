@@ -68,7 +68,7 @@ const Registration = () => {
             });
     };
     return (
-        <div className=" h-[100vh]">
+        <div className=" h-[100vh] max-w-screen-xl mx-auto">
             <div className="shadow-xl md:w-3/4 lg:w-2/4 mx-auto">
                 <form onSubmit={handleRegistration}>
                     <div className="relative">

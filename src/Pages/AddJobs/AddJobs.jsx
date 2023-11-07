@@ -37,12 +37,12 @@ const AddJobs = () => {
                     navigate('/postedJobs');
                 }
             })
-    }
+    };
     return (
-        <div className="">
+        <div className="max-w-screen-xl mx-auto">
             <h1 className="text-5xl font-bold text-center">Add Jobs</h1>
             <div className="">
-                <div className="md:w-1/2 mx-auto shadow-xl">
+                <div className="lg:w-1/2 mx-auto shadow-xl">
                     <img className='h-[170px] lg:h-[280px] w-full' src={JobsThumb} alt="" />
                     <form onSubmit={handleAddJobs} className="px-8 card-body">
                         <div className="form-control">
@@ -81,7 +81,7 @@ const AddJobs = () => {
                             </label>
                             <input type="text" name="img" placeholder="Enter Job Photo URL" className="input bg-white input-bordered" />
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex flex-col md:flex-row gap-2">
                             <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">Minimum Price</span>

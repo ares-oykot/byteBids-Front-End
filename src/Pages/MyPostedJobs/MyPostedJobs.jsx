@@ -13,7 +13,7 @@ const MyPostedJobs = () => {
             .then(data => setJobs(data));
     }, [url]);
     return (
-        <div className="grid md:grid-cols-3 gap-5 mt-[6px]">
+        <div className="grid md:grid-cols-3 gap-5 mt-[6px] max-w-screen-xl mx-auto">
             {
                 jobs.map(job => <div key={job._id}>
                     <div className="bg-gradient-to-r from-[#b7abff] to-[#94c6ff] flex flex-col justify-between hover:shadow-xl rounded-md h-full duration-200">
@@ -28,7 +28,10 @@ const MyPostedJobs = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link to={`/details/${job?._id}`} className="mx-3 md:mx-5 lg:mx-5 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-5 btn">Bid Now</Link>
+                        <div className="flex justify-between">
+                            <Link to={`/details/${job?._id}`} className="w-2/5 mx-3 md:mx-5 lg:mx-5 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-5 btn">Update</Link>
+                            <Link to={`/details/${job?._id}`} className="w-2/5 mx-3 md:mx-5 lg:mx-5 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-5 btn">Delete</Link>
+                        </div>
                     </div>
                 </div>)
             }
