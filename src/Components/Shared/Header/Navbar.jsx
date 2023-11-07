@@ -6,7 +6,6 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user);
     const handleSignOut = () => {
         logOut()
             .then(() => {
