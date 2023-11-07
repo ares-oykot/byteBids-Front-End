@@ -7,6 +7,7 @@ import Details from "../Components/Details/Details";
 import MyBids from "../Pages/MyBids/MyBids";
 import PrivetRout from "./PrivetRout";
 import MyPostedJobs from "../Pages/MyPostedJobs/MyPostedJobs";
+import AddJobs from "../Pages/AddJobs/AddJobs";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: "/postedJobs",
                 element: <PrivetRout><MyPostedJobs></MyPostedJobs></PrivetRout>
+            },
+            {
+                path: "/addJobs",
+                element: <PrivetRout><AddJobs></AddJobs></PrivetRout>
             }
         ]
     }
