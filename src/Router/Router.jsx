@@ -6,6 +6,7 @@ import Registration from "../Pages/Registration/Registration";
 import Details from "../Components/Details/Details";
 import MyBids from "../Pages/MyBids/MyBids";
 import PrivetRout from "./PrivetRout";
+import MyPostedJobs from "../Pages/MyPostedJobs/MyPostedJobs";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: "/myBids",
                 element: <PrivetRout><MyBids></MyBids></PrivetRout>
+            },
+            {
+                path: "/postedJobs",
+                element: <PrivetRout><MyPostedJobs></MyPostedJobs></PrivetRout>
             }
         ]
     }
