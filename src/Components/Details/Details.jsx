@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import moment from 'moment';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -7,6 +7,7 @@ const Details = () => {
     const job = useLoaderData();
     const { title, img, deadline, price_range, description, buyer_Email } = job || {};
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
 
@@ -20,7 +21,8 @@ const Details = () => {
         const email = form.email.value;
         const buyer_Email = form.buyer_Email.value;
         const message = form.message.value;
-        const bidInfo = { title, deadline, biddingAmount, price_range, email, buyer_Email, message, img }
+        const status = "Pending"
+        const bidInfo = { title, deadline, biddingAmount, price_range, email, buyer_Email, message, img, status }
         fetch('http://localhost:5000/bids', {
             method: "POST",
             headers: {
@@ -32,6 +34,7 @@ const Details = () => {
             .then(data => {
                 if (data.insertedId) {
                     swal("Nice!!", "This project has been successfully bid", "success");
+                    navigate('/myBids');
                 }
             })
     };

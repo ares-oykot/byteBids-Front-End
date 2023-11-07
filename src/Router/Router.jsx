@@ -4,13 +4,16 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import Details from "../Components/Details/Details";
+import MyBids from "../Pages/MyBids/MyBids";
+import PrivetRout from "./PrivetRout";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element : <Root></Root>,
+        element: <Root></Root>,
         children: [
-            {   path: "/",
+            {
+                path: "/",
                 element: <Home></Home>
             },
             {
@@ -23,8 +26,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/details/:id",
-                element: <Details></Details>,
-                loader: ({params}) => fetch(`http://localhost:5000/job/${params.id}`)
+                element: <PrivetRout><Details></Details></PrivetRout>,
+                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+            },
+            {
+                path: "/myBids",
+                element: <PrivetRout><MyBids></MyBids></PrivetRout>
             }
         ]
     }
