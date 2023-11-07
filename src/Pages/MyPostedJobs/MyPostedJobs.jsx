@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const MyPostedJobs = () => {
     const { user } = useContext(AuthContext);
-    console.log(user.email);
     const url = `http://localhost:5000/jobs?email=${user?.email}`
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
@@ -12,6 +12,35 @@ const MyPostedJobs = () => {
             .then(res => res.json())
             .then(data => setJobs(data));
     }, [url]);
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/jobs/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data?.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Job has been deleted.',
+                                'success'
+                            );
+                            const remaining = jobs?.filter(job => job._id !== id);
+                            setJobs(remaining);
+                        }
+                    });
+            }
+        });
+    };
     return (
         <div className="grid md:grid-cols-3 gap-5 mt-[6px] max-w-screen-xl mx-auto">
             {
@@ -30,7 +59,7 @@ const MyPostedJobs = () => {
                         </div>
                         <div className="flex justify-between">
                             <Link to={`/details/${job?._id}`} className="w-2/5 mx-3 md:mx-5 lg:mx-5 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-5 btn">Update</Link>
-                            <Link to={`/details/${job?._id}`} className="w-2/5 mx-3 md:mx-5 lg:mx-5 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-5 btn">Delete</Link>
+                            <button onClick={() => handleDelete(job?._id)} className="w-2/5 mx-3 md:mx-5 lg:mx-5 mt-2 md:text-sm lg:text-base rounded bg-gradient-to-t from-[#73a8e4] to-[#897ade] mb-3 md:mb-5 lg:mb-5 btn">Delete</button>
                         </div>
                     </div>
                 </div>)
