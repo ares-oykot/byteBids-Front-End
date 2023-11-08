@@ -1,5 +1,6 @@
-const BidsRow = ({ bid }) => {
-    const {title, deadline, biddingAmount, price_range, email, buyer_Email, message, img, status} = bid || {};
+const BidsRow = ({ bid, handleUpdateStatus }) => {
+    const {_id, title, deadline, biddingAmount, price_range, email, buyer_Email, message, img, status} = bid || {};
+    
     return (
         <tr>
             <td className="hidden md:inline">
@@ -17,21 +18,13 @@ const BidsRow = ({ bid }) => {
             </td>
             <td>
                 {deadline}
-            </td>
-            <td className="text-purple-600">
+            </td> 
+            <td className={status === "canceled" ? "text-red-600" : status === "Pending" ? "text-purple-600" : "text-green-600"}>
                 {status}
             </td>
             <td className="">
-                <button className="btn btn-sm" disabled={status === "Pending" ? true : status === "Progress"} >Complete</button>
+                <button onClick={() => handleUpdateStatus(_id, "complete")} className="btn btn-sm" disabled={status === "Pending" || status === "canceled" || status === "complete" ? true : false} >Complete</button>
             </td>
-            {/* <td>{date}</td>
-            <td>{price}</td>
-            <th>
-                {
-                    status === 'confirm' ? <span className="font-bold text-primary">Confirmed</span> :
-                        <button onClick={() => handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>
-                }
-            </th> */}
         </tr>
     );
 };

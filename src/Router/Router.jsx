@@ -9,6 +9,7 @@ import PrivetRout from "./PrivetRout";
 import MyPostedJobs from "../Pages/MyPostedJobs/MyPostedJobs";
 import AddJobs from "../Pages/AddJobs/AddJobs";
 import Update from "../Components/Update/Update";
+import BidRequests from "../Pages/BidRequests/BidRequests";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
                 path: "/update/:id",
                 element: <PrivetRout><Update></Update></PrivetRout>,
                 loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+            },
+            {
+                path: "/bidRequests",
+                element: <PrivetRout><BidRequests></BidRequests></PrivetRout>
             }
         ]
     }

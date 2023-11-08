@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import BidsRow from "./BidsRow";
+import BidRequestsRow from "./BidRequestsRow";
 import swal from "sweetalert";
-
-const MyBids = () => {
+const BidRequests = () => {
     const { user } = useContext(AuthContext);
     const [bids, setBids] = useState([]);
-    const url = `http://localhost:5000/bids?email=${user?.email}`;
+    const url = `http://localhost:5000/bidsRequests?email=${user?.email}`;
     useEffect(() => {
         fetch(url, { credentials: "include" })
             .then(res => res.json())
@@ -32,7 +31,7 @@ const MyBids = () => {
                     setBids(newStatus)
                 }
             });
-    }
+    };
     return (
         <div className="max-w-screen-xl mx-auto">
             <h1 className="text-4xl font-bold text-center">Your Bids</h1>
@@ -52,11 +51,11 @@ const MyBids = () => {
                     <tbody>
                         {
                             bids?.map(bid =>
-                                <BidsRow
+                                <BidRequestsRow
                                     key={bid._id}
                                     bid={bid}
                                     handleUpdateStatus={handleUpdateStatus}>
-                                </BidsRow>)
+                                </BidRequestsRow>)
                         }
                     </tbody>
                 </table>
@@ -65,4 +64,4 @@ const MyBids = () => {
     );
 };
 
-export default MyBids;
+export default BidRequests;
