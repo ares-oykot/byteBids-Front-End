@@ -24,7 +24,7 @@ const AddJobs = () => {
         const description = form.description.value;
         const buyer_Email = form.buyer_Email.value;
         const jobInfo = { title, img, deadline, price_range, short_description, description, buyer_Email, category };
-        fetch('http://localhost:5000/jobs', {
+        fetch('https://byte-bids-back-end.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

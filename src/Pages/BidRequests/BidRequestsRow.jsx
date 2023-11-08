@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 const BidRequestsRow = ({ bid, handleUpdateStatus }) => {
-    const { _id, title, deadline, biddingAmount, price_range, email, buyer_Email, message, img, status } = bid || {};
+    const { _id, title, deadline, email, img, status } = bid || {};
     return (
         <tr>
             <td className="hidden md:inline">
@@ -31,5 +32,8 @@ const BidRequestsRow = ({ bid, handleUpdateStatus }) => {
         </tr>
     );
 };
-
+BidRequestsRow.propTypes = {
+    bid: PropTypes.object.isRequired,
+    handleUpdateStatus: PropTypes.func.isRequired
+}
 export default BidRequestsRow;

@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const BidRequests = () => {
     const { user } = useContext(AuthContext);
     const [bids, setBids] = useState([]);
-    const url = `http://localhost:5000/bidsRequests?email=${user?.email}`;
+    const url = `https://byte-bids-back-end.vercel.app/bidsRequests?email=${user?.email}`;
     useEffect(() => {
         fetch(url, { credentials: "include" })
             .then(res => res.json())
@@ -14,7 +14,7 @@ const BidRequests = () => {
     }, [url]);
     const handleUpdateStatus = (id, status) => {
         const updateStatus = { status: `${status}` };
-        fetch(`http://localhost:5000/bids/${id}`, {
+        fetch(`https://byte-bids-back-end.vercel.app/bids/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -4,7 +4,7 @@ import icon from "../../../assets/letter-b.png"
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
-const Navbar = ({ toggleDarkMode, isDarkMode }) => {
+const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleSignOut = () => {
         logOut()
@@ -142,18 +142,6 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="mr-5 mt-1" onClick={toggleDarkMode}>
-                    {
-                        isDarkMode ?
-                            <>
-                                {/* <img className="w-6 h-6 lg:w-8 lg:h-8" src={moon} alt="" /> */}
-                            </>
-                            :
-                            <>
-                                {/* <img className="w-6 h-6 lg:w-8 lg:h-8" src={moon1} alt="" /> */}
-                            </>
-                    }
-                </button>
                 {
                     user?.displayName ? <p className="text-[6px] md:text-base font-bold mr-1 md:mr-2 py-1 md:py-2 bg-sky-300 md:px-2 w-full text-center md:w-48 rounded md:rounded-3xl">{user.displayName}</p>
                         :

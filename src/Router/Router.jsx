@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: "/details/:id",
                 element: <PrivetRout><Details></Details></PrivetRout>,
-                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://byte-bids-back-end.vercel.app/job/${params.id}`)
             },
             {
                 path: "/myBids",
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path: "/update/:id",
                 element: <PrivetRout><Update></Update></PrivetRout>,
-                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://byte-bids-back-end.vercel.app/job/${params.id}`)
             },
             {
                 path: "/bidRequests",

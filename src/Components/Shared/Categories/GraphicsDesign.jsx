@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const GraphicsDesign = () => {
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/jobs/graphicsDesign')
+        fetch('https://byte-bids-back-end.vercel.app/jobs/graphicsDesign')
             .then(res => res.json())
             .then(data => setJobs(data));
     }, []);

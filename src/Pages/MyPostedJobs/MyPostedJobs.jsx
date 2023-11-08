@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 
 const MyPostedJobs = () => {
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/jobs?email=${user?.email}`
+    const url = `https://byte-bids-back-end.vercel.app/jobs?email=${user?.email}`
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
         fetch(url, { credentials: "include" })
@@ -24,7 +24,7 @@ const MyPostedJobs = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/jobs/${id}`, {
+                fetch(`https://byte-bids-back-end.vercel.app/jobs/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 const BidsRow = ({ bid, handleUpdateStatus }) => {
-    const {_id, title, deadline, biddingAmount, price_range, email, buyer_Email, message, img, status} = bid || {};
+    const {_id, title, deadline, email, img, status} = bid || {};
     
     return (
         <tr>
@@ -28,5 +29,8 @@ const BidsRow = ({ bid, handleUpdateStatus }) => {
         </tr>
     );
 };
-
+BidsRow.propTypes = {
+    bid: PropTypes.object.isRequired,
+    handleUpdateStatus: PropTypes.func.isRequired
+}
 export default BidsRow;

@@ -24,7 +24,7 @@ const Details = () => {
         const message = form.message.value;
         const status = "Pending"
         const bidInfo = { title, deadline, biddingAmount, price_range, email, buyer_Email, message, img, status }
-        fetch('http://localhost:5000/bids', {
+        fetch('https://byte-bids-back-end.vercel.app/bids', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

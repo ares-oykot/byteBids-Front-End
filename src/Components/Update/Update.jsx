@@ -28,7 +28,7 @@ const Update = () => {
         const description = form.description.value;
         const buyer_Email = form.buyer_Email.value;
         const updateInfo = { title, img, deadline, price_range, short_description, description, buyer_Email, category };
-        fetch(`http://localhost:5000/jobs/${_id}`, {
+        fetch(`https://byte-bids-back-end.vercel.app/jobs/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

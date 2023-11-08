@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const DigitalMarketing = () => {
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/jobs/digitalMarketing')
+        fetch('https://byte-bids-back-end.vercel.app/jobs/digitalMarketing')
             .then(res => res.json())
             .then(data => setJobs(data));
     }, []);

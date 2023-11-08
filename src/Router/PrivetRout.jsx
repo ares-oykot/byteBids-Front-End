@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 import { Vortex } from 'react-loader-spinner'
-
+import PropTypes from 'prop-types';
 const PrivetRout = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
@@ -24,5 +24,7 @@ const PrivetRout = ({ children }) => {
     }
     return <Navigate to="/signIn" state={location.pathname} replace></Navigate>
 };
-
+PrivetRout.propTypes = {
+    children: PropTypes.node.isRequired
+}
 export default PrivetRout;
