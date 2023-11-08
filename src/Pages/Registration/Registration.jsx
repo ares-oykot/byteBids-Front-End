@@ -91,7 +91,7 @@ const Registration = () => {
                         <input type="email" name="email" className="block text-white outline-none rounded-md mt-5 pl-5 placeholder-white w-full py-2 bg-gradient-to-r from-[#0766AA] to-[#26A6DE]" placeholder="Your Email" required />
                         <input type="text" name="photo" className="block text-white outline-none rounded-md mt-5 pl-5 placeholder-white w-full py-2 bg-gradient-to-r from-[#0766AA] to-[#26A6DE]" placeholder="Your Photo URL" required />
                         <div className="relative">
-                            <input defaultValue="123456A#" type={showPassword ? 'text' : 'password'} name="password" className="block text-white outline-none rounded-md mt-5 pl-5 placeholder-white w-full py-2 bg-gradient-to-r from-[#0766AA] to-[#26A6DE]" placeholder="Your Password" required />
+                            <input type={showPassword ? 'text' : 'password'} name="password" className="block text-white outline-none rounded-md mt-5 pl-5 placeholder-white w-full py-2 bg-gradient-to-r from-[#0766AA] to-[#26A6DE]" placeholder="Your Password" required />
                             <span className="text-white absolute right-3 bottom-[0.6rem] cursor-pointer text-lg" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <AiFillEye></AiFillEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                         </div>
                         <div className="ml-1 my-1">
