@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet";
 
 const MyPostedJobs = () => {
     const { user } = useContext(AuthContext);
@@ -43,6 +44,9 @@ const MyPostedJobs = () => {
     };
     return (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-[6px] max-w-screen-xl mx-auto">
+            <Helmet>
+                <title>ByteBids | My Posted Jobs</title>
+            </Helmet>
             {
                 jobs.map(job => <div key={job._id}>
                     <div className="bg-gradient-to-r from-[#b7abff] to-[#94c6ff] flex flex-col justify-between hover:shadow-xl rounded-md h-full duration-200">

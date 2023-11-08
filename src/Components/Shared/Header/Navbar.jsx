@@ -162,9 +162,9 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
                 <div className="dropdown z-50 dropdown-hover">
 
                     <label tabIndex={0} className="">
-                        <div className="w-8 md:w-10">
+                        <div className="w-8 h-8 md:h-10 md:w-10">
                             {
-                                user?.photoURL ? <img className="rounded-full" src={user?.photoURL} /> :
+                                user?.photoURL ? <img className="rounded-full w-full h-full" src={user?.photoURL} /> :
                                     <img className="rounded-full" src={profile} />
                             }
                         </div>

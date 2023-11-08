@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { Helmet } from 'react-helmet';
 const Registration = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { createUser, googleSignIn } = useContext(AuthContext);
@@ -69,6 +70,9 @@ const Registration = () => {
     };
     return (
         <div className=" h-[100vh] max-w-screen-xl mx-auto">
+            <Helmet>
+                <title>ByteBids | SignUp</title>
+            </Helmet>
             <div className="shadow-xl md:w-3/4 lg:w-2/4 mx-auto">
                 <form onSubmit={handleRegistration}>
                     <div className="relative">

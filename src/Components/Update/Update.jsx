@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 const Update = () => {
     const job = useLoaderData();
     const { _id, title, img, deadline, price_range, short_description, description, buyer_Email, category } = job || {};
+    const navigate = useNavigate();
     const priceRange = price_range;
     const hyphenIndex = priceRange.indexOf('-');
     const price1 = priceRange.slice(0, hyphenIndex);
@@ -37,11 +39,15 @@ const Update = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     swal("Nice!!", "Job updated successfully", "success");
+                    navigate("/postedJobs");
                 }
             });
     };
     return (
         <div className="max-w-screen-xl mx-auto">
+            <Helmet>
+                <title>ByteBids | Update Jobs</title>
+            </Helmet>
             <h1 className="text-5xl font-bold text-center">Update Jobs</h1>
             <div className="">
                 <div className="lg:w-1/2 mx-auto shadow-xl">

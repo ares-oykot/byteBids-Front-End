@@ -8,6 +8,7 @@ import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import swal from 'sweetalert';
+import { Helmet } from 'react-helmet';
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -40,6 +41,9 @@ const Login = () => {
     };
     return (
         <div className=" h-[100vh] max-w-screen-xl mx-auto">
+            <Helmet>
+                <title>ByteBids | SignIn</title>
+            </Helmet>
             <div className="shadow-xl md:w-3/4 lg:w-2/4 mx-auto">
                 <form onSubmit={handleLogin}>
                     <div className="relative">

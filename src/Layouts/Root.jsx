@@ -3,8 +3,10 @@ import Navbar from "../Components/Shared/Header/Navbar";
 
 const Root = () => {
     return (
-        <div>
-            <Navbar></Navbar>
+        <div className="relative">
+            <div className="sticky bg-white top-0 z-50">
+                <Navbar></Navbar>
+            </div>
             <div className="">
                 <Outlet></Outlet>
             </div>

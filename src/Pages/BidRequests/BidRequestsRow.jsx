@@ -18,7 +18,7 @@ const BidRequestsRow = ({ bid, handleUpdateStatus }) => {
             <td>
                 {deadline}
             </td>
-            <td className="text-purple-600">
+            <td className={status === "canceled" ? "text-red-600" : status === "Pending" ? "text-purple-600" : "text-green-600"}>
                 {status}
             </td>
             <td className={status === "inProgress" ? "inline" : status === "complete" ? "inline" : "hidden"}>

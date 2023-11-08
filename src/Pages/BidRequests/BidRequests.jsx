@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import BidRequestsRow from "./BidRequestsRow";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 const BidRequests = () => {
     const { user } = useContext(AuthContext);
     const [bids, setBids] = useState([]);
@@ -34,6 +35,9 @@ const BidRequests = () => {
     };
     return (
         <div className="max-w-screen-xl mx-auto">
+            <Helmet>
+                <title>ByteBids | Bid Requests</title>
+            </Helmet>
             <h1 className="text-4xl font-bold text-center">Your Bids</h1>
             <div className="overflow-x-auto">
                 <table className="table text-xs md:text-base">

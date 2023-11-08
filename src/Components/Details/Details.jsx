@@ -3,6 +3,7 @@ import moment from 'moment';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import swal from 'sweetalert';
+import { Helmet } from "react-helmet";
 const Details = () => {
     const job = useLoaderData();
     const { title, img, deadline, price_range, description, buyer_Email } = job || {};
@@ -40,6 +41,9 @@ const Details = () => {
     };
     return (
         <div className="">
+            <Helmet>
+                <title>ByteBids | Details</title>
+            </Helmet>
             <p className="text-center mt-5">{moment().format("dddd, MMMM D, YYYY, h:mm:ss a")}</p>
             <div className="mt-5 rounded-md flex flex-col md:flex-row border max-w-screen-xl mx-auto p-3 md:p-7 bg-gradient-to-r from-[#b7abff] to-[#94c6ff]">
                 <div className="md:w-1/2">

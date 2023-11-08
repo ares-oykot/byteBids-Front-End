@@ -3,6 +3,7 @@ import JobsThumb from "../../assets/JobsThumd.png"
 import { AuthContext } from "../../Providers/AuthProvider";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const AddJobs = () => {
     const { user } = useContext(AuthContext);
     const [category, setCategory] = useState('webDevelopment');
@@ -40,6 +41,9 @@ const AddJobs = () => {
     };
     return (
         <div className="max-w-screen-xl mx-auto">
+            <Helmet>
+                <title>ByteBids | Add Job</title>
+            </Helmet>
             <h1 className="text-5xl font-bold text-center">Add Jobs</h1>
             <div className="">
                 <div className="lg:w-1/2 mx-auto shadow-xl">
